@@ -1,0 +1,44 @@
+
+<%- include('partials/head') %>
+<article class="container">
+    <a href="/lessons" >
+        <img src="/images/icons/Caret left.svg" alt="caret left">
+    </a>
+    
+   
+    <h1 class="head">All stories </h1>
+    <div class="searchbar">
+        <img class="search-icon" src="/imagea/icons/search.svg" alt="search icon">
+        <input type="text" id="search-story" placeholder=" Search for stories">
+    </div>
+    
+
+    <section class="all-catogory">
+        <button class="Filter white-text">Animal</button>
+        <button class="Filter white-text">Season</button>
+        <button class="Filter white-text">Language</button>
+        <button class="Filter white-text">Sorting</button>
+    </section>
+    <section class="ul-stories"> 
+        <% stories.forEach(story => {%>
+            <article class="li-story stories-li">
+                    <img class="img-story" src="https://fdnd-agency.directus.app/assets/<%= story.image %>" alt="story image">
+                    <h2 class="story-title">
+                         <%= story.title %> 
+                    </h2> 
+                    <p class="story-summary"> 
+                        <%= story.summary %>
+                    </p>
+                    <img class="image-flag" src="/images/icons/engelse-flag.svg" alt="flag">
+                    <div class="story-interactions">
+                        <img class="icon-playbutton" src="/images/icons/play-button.svg" alt="play button icon">
+                        <img class="icon-download" src="/images/icons/cloud-download-outline.svg" alt="download icon">
+                    </div>
+            </article>
+       <% });  %>
+    </section>
+ 
+   
+    </section>
+</article>
+

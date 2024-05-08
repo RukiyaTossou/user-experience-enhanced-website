@@ -1,0 +1,96 @@
+<%- include('partials/head') %>
+<%- include('partials/menu') %>
+
+<section class="container">
+    <h1 class="heading title"> Lessons</h1>
+    <h2 class="heading">Own playlists</h2>
+<!-- PLAYLIST -->
+
+    <section class="ul-playlist">
+        <div class="more-items">
+            <img src="/images/icons/white-plus.svg" alt="plus">
+            <h3 class="heading">Make a playlist!</h3>
+        </div> 
+        <% playlist.forEach(playlistItem => { %>
+            <article class="playlist-item-fav">
+                <a class="content-card" href="/playlist/<%= playlistItem.id %>">
+                    <img class="fav-playlist-image" src="https://fdnd-agency.directus.app/assets/<%= playlistItem.image %>" alt="playlist image">
+                    <h3 class="playlist-title"><%= playlistItem.title %></h3>
+                </a>
+            <form action="/addPlaylist/<%= playlist.id %>" method="POST">
+                <input type="hidden" name="playlist">
+                <button class="heart-button"> <svg class="heart-img" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M11.6536 7.15238C11.8471 7.33832 12.1529 7.33832 12.3464 7.15238C13.1829 6.34871 14.326 5.75 15.6 5.75C18.1489 5.75 20.25 7.64769 20.25 10.0298C20.25 11.7261 19.4577 13.1809 18.348 14.428C17.2397 15.6736 15.7972 16.7316 14.4588 17.6376L12.1401 19.207C12.0555 19.2643 11.9445 19.2643 11.8599 19.207L9.54125 17.6376C8.20278 16.7316 6.76035 15.6736 5.65201 14.428C4.54225 13.1809 3.75 11.7261 3.75 10.0298C3.75 7.64769 5.85106 5.75 8.4 5.75C9.67403 5.75 10.8171 6.34871 11.6536 7.15238Z" stroke="#C4C4C4" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg></button>
+              </form>
+            </article>
+        
+       <% }); %>
+
+    </section>
+   
+    <!-- STORIES -->
+    <section>
+        <h2 class="heading">All stories</h2>
+        <div class="box-language">
+            <button class="first-language"> <img src="/images/icons/nederlandse-flag.png" alt="nederlandse flag"> Dutch</button>
+            <button class="second-language"><img src="/images/icons/engelse-flag.svg" alt="engelse flag"> English</button>
+            <a class=" heading a-showAll" href="/lessons/allStories"> Show All</a>
+        </div>
+    </section>
+   
+    <section class="ul-lessons-stories">
+        <% stories.forEach(story => {%>
+            <article class="li-story">
+                <img class="img-story" src="https://fdnd-agency.directus.app/assets/<%= story.image %>" alt="story image">
+                <h2 class="story-title">
+                    <%= story.title %> 
+                </h2> 
+                <p class="story-summary"> 
+                    <%= story.summary %>
+                </p>
+                <img class="image-flag" src="/images/icons/engelse-flag.svg" alt="flag">
+                <div class="story-interactions">
+                    <img class="icon-playbutton" src="/images/icons/play-button.svg" alt="play button icon">
+                    <img class="icon-download" src="/images/icons/cloud-download-outline.svg" alt="download icon">
+                    <button class="btn-add">
+                        <img class="icon-add" src="/images/icons/106230_add_icon.svg" alt="add button">
+                    </button>
+                    
+                </div>
+            </article>
+       <% });  %>
+
+       <section class="popup-container">
+        <button type="button" class="close-btn-popup">Close</button>
+        <h1 class=" heading"> Add to playlist </h1>
+        <form action="" method="POST">
+            <% playlist.forEach(playlistItem => { %>
+                <article class="playlist-item">
+                    <img class="img-popup" src="https://fdnd-agency.directus.app/assets/<%= playlistItem.image %>" alt="playlist image">
+                    <h3 class="heading"><%= playlistItem.title %></h3>
+                    <input type="radio" class="radio-botton" name="playlist" value="<%= playlistItem.id %>">
+                </article>
+            <% }); %>
+         
+            <button class="opslaan-button" type="submit">Toevoegen</button>
+            
+        </form>
+    </section>
+
+    </section>
+    <!-- favorieten playlist -->
+    <h1 class="heading">favorite playlists</h1>
+    <section class="ul-favorite-playlist">
+        <% if (likedItems.length === 0) { %>
+            <p class="heading"> No liked playlists! </p>
+       <% }  else { %>
+        <p></p>
+     
+
+        <%  } %>
+
+    </section>
+</section>
+
+

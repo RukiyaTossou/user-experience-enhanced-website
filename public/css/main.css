@@ -1,0 +1,50 @@
+:root {
+    /* background */
+    --lessons-body-backgroundcolor:#3A1A69;
+    --lessons-backgroundcolor-addPlaylist:#494375;
+    --menu-background-color: #1c1c1cb3;
+    --scrollbar-color:#6865658d;
+
+     /* color */
+     --text-color-light:#FFFFFF;
+     --text-color-dark:#000;
+     --playlist-play-button-color:#F3A22A;
+     --story-play-button-color:#3A54DE;
+     --filter-button-color:#9264F4;
+     --box-story:#FFFFFF;
+     --box-lessons:#FFFFFF;
+
+
+    /*  */
+
+    /* font */
+    --lessons-h1-font:"Poppins", sans-serif;
+    --lessons-h1-fontSize: 1.8rem;
+    --lessons-h2-fontSize: 1.3rem;
+    --lessons-h2-title-fontSize: 1rem;
+    --lessons-h1-font-weight: 600;
+
+    /* paddding/layout */
+    --lessons-story-box-width: 22.9rem;;
+}
+
+body {
+    font-family: var(--lessons-h1-font);
+    background-color: var(--lessons-body-backgroundcolor);
+}
+
+h1 {
+    font-size: 2rem;
+}
+
+.heading {
+    color: var(--text-color-light);
+}
+.title {
+    text-align: center;
+}
+.sub-title {
+    color: var(--text-color-dark);
+    font-size: 1rem;
+
+}

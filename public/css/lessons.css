@@ -1,0 +1,276 @@
+:root {
+    /* background */
+    --lessons-backgroundcolor-body:#3A1A69;
+    --lessons-backgroundcolor-body2:#ffffff26;
+    --lessons-backgroundcolor-addPlaylist:#494375;
+     /* color */
+    --lessons-h1-color: #FFFFFF;
+    --lessons-listening-box-color:#139943;
+    --lessons-story-box:#FFFFFF;
+    --lessons-dark-text-color:#000000;
+
+    /*  */
+    /* font */
+    --lessons-h1-font:"Poppins", sans-serif;
+    --lessons-h1-fontSize: 1.8rem;
+    --lessons-h2-fontSize: 1.3rem;
+    --lessons-h2-title-fontSize: 1rem;
+    --lessons-h1-font-weight: 600;
+
+    /* paddding/layout */
+    --lessons-story-box-width:22.9rem;;
+    --border-radius-standard:0.5rem;
+}
+
+.container {
+    
+}
+.ul-playlist {
+    display: flex;
+    overflow-x:scroll;
+}    
+
+.more-items {
+    padding: 1rem;
+    width:8rem;
+    height:6rem;
+    border-radius: 0.5rem;
+}
+
+.playlist-item {
+        background-color: var(--lessons-h1-color);
+        height: 16rem;
+        padding:0 0.5rem 0;
+        margin-right: 0.5rem;
+        border-radius:0.5rem;
+        text-align: center;
+}
+
+.box-language {
+    width:100%;
+}
+
+.a-showAll {
+    text-decoration: none; 
+    margin-left: 3rem;
+ }
+  
+.first-language .second-language {
+    border: none; 
+    border-radius: 0.5rem;
+    padding: 0.5rem;
+    margin-right: 0.2rem;
+    font-weight: 600; 
+}
+
+    /* STORIES */
+.ul-lessons-stories {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 0.5rem;
+    padding-top: 0.8rem;
+}
+
+.li-story {
+    background-color: var(--lessons-story-box);
+    width:24rem;
+    height: 8rem ;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+}
+
+.img-story {
+    height:5rem;
+    width: 5rem;
+    object-fit: cover;
+    padding: 0.5rem;
+} 
+
+.story-title {
+    font-size: var(--lessons-h2-title-fontSize);
+    white-space: nowrap;
+}
+
+.story-summary {
+    position:relative;
+    bottom:1.4rem;
+    
+    font-size: 0.9rem;
+    width:17rem;
+    max-width:22rem;
+    margin-bottom:2rem; 
+}
+
+.image-flag {
+    position: relative;
+    top: 0.5rem;
+    left: 15.2rem;
+}
+
+.story-interactions {
+    position:relative;
+    top:2.2rem;
+    left:8rem; 
+}
+
+.btn-add {
+    background-color: transparent;
+    border:none;
+    cursor: pointer;
+    position:relative ;
+    top:0.2rem;
+}
+
+.icon-download {
+    align-self: end;
+}
+  
+.ul-favorite-playlist{
+    display: flex;
+    overflow-x: scroll;
+    overflow-y: none;  
+}
+
+.playlist-item{
+    background-color: var(--lessons-story-box);
+    height: 7rem;
+    width: 20rem;
+    margin-left: 1rem;
+    margin-bottom:0.5rem;
+    border-radius:var(--border-radius-standard);
+    text-align: center;
+}
+
+.content-card {
+    text-decoration: none;
+}   
+            
+/* POP-up */
+.popup-container {
+    display: none;
+    padding: 0 0.5rem;
+    background-color: var(--lessons-backgroundcolor-body);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.close-btn-popup {
+    background-color: transparent;
+    border:none;
+    color: #FFFFFF;
+    margin-top: 1rem;
+    font-size: 1.1rem;
+}
+
+.opslaan-button  {
+    background-color: var(--lessons-backgroundcolor-body2);
+    border:none;
+    border-radius: 0.5rem;
+    padding:0.5rem;
+}
+
+
+.playlist-item {
+    display: flex;
+}
+.img-popup {
+    padding-top:0.5rem;
+    width: 6rem;
+    height: 6rem;
+    object-fit: cover;
+
+}
+.playlist-image {
+    width: 8rem;
+    height: 8rem;
+    object-fit: cover;
+    margin:0 0.5rem 0.5rem ;
+}
+  
+.showPopup{
+    display: block;
+}
+
+.ul-lessons-stories::-webkit-scrollbar {
+    width: 1px; /* Width of the scrollbar */
+    height: 0.5rem;
+  }
+  
+.ul-lessons-stories::-webkit-scrollbar-thumb {
+    background-color: #6865658d; /* Color of the thumb */
+    border-radius: 1rem; /* Rounded corners */
+}
+
+
+/* GRID STORY */
+.li-story .img-story {
+    grid-column: 1;
+    grid-row: 1 / 3;
+}
+
+.li-story .story-title {
+    grid-column: 2 / 3;
+    grid-row: 1;
+}
+
+.li-story .story-summary {
+    grid-column: 2 / 3 ;
+    grid-row: 2;
+}
+
+.li-story .image-flag {
+    grid-column: 2 / 3;
+    grid-row: 1;
+}
+
+.li-story .story-interactions {
+    grid-column: 2 / 3;
+    grid-row: 2;
+}
+
+/* fav playlist */
+
+
+.playlist-item-fav {
+    height: 15rem;
+    width: 15rem;
+    background-color:var(--lessons-backgroundcolor-body2);
+    border-radius:var(--border-radius-standard);
+    text-align: center;
+    margin-right:0.5rem; 
+}
+
+.content-card {
+    text-decoration:none;
+    color:white;
+}
+
+.heart-button {
+    position:relative;
+    bottom:1rem;
+    border:none;
+    cursor:pointer; 
+    background-color: transparent;
+}
+
+.fav-playlist-image {
+    width:9rem;
+    height:9rem;
+    object-fit:cover;
+}
+
+.heart-img {
+    scale:0.8;
+    /* fill: white;   */
+}
+
+.filled {
+    fill:white
+}
+
+.heart-img:hover {
+    fill:white;
+}
