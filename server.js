@@ -68,17 +68,24 @@ response.render('stories', {
 
 
 // // Post
-
-
-app.post('/addPlaylist/:id', function(request, response) {
+app.post('/lessons', function(request, response) {
     // Handle the toggle like functionality
      // Extract the item from the request body
-    likedItems.push(request.body.playlist)
-    if (request.body.enhanced)
+     const newItem = request.body.item;
+     // Assuming `playlistItems` is your array of  playlist items
+     likedItems.push(newItem);
+ 
+     // Assuming `playlistItems` is the updated list of playlist items
+     response.render('index', {
+         stories: storiesAPI.data,
+         playlist: playlistsAPI.data,
+         // Pass the updated list of playlist items to the view
+         likedItems: likedItems
+     });
 });
 
 // // POST route for liking or unliking a playlist
-// app.post("/addPlaylist", (request, response) => {
+// app.post("/lessons", (request, response) => {
 //     const playlistId = request.body.playlist; // Veronderstel dat de ID van de geselecteerde afspeellijst wordt verzonden via het formulier
     
 //     // Zoek de geselecteerde afspeellijst op basis van de ID
@@ -99,18 +106,12 @@ app.post('/addPlaylist/:id', function(request, response) {
 //         console.log("Selected playlist not found:", playlistId);
 //     }
 
-//     // Redirect terug naar de startpagina of render een gedeeltelijke weergave, afhankelijk van het verzoek
-//     if (request.body.enhanced) {
-//         response.render('partials/liked-playlist', { likedItems: likedItems });
+//   
 //     } else {
 //         response.redirect(303, '/lessons');
 //     }
 // });
  
-// app.post('/favPlaylist', function(request, response) {
-//    likedItems.push(request)
-// });
-
 
 
 // Stel het poortnummer in waar express op moet gaan luisteren
